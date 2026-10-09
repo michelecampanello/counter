@@ -1,9 +1,12 @@
+// Inizializzazione costanti
 const STORAGE_KEY = "counter";
 const MIN_VALUE = 0;
 const MAX_VALUE = 99;
 
+// Prendi il counter dal localStorage o settalo a 0
 let counter = Number(localStorage.getItem(STORAGE_KEY)) || 0;
 
+// Crea i container, ne assegna gli id e li inietta nel body
 const renderContainer = (id, tagName) => {
   const container = document.createElement(tagName);
   container.id = id;
@@ -17,6 +20,7 @@ const msgContainer = renderContainer("msgContainer", "p");
 
 const buttons = {};
 
+// Crea i bottoni e assegna l'event listener
 const renderBtn = (action) => {
   const btn = document.createElement("button");
   const icon = document.createElement("img");
@@ -34,6 +38,7 @@ const renderBtn = (action) => {
   buttons[action] = btn;
 };
 
+// Fa refresh del counter e del messaggio e assegna dinamicamente l'attributo disabled ai bottoni
 const updateUI = (message = "") => {
   counterContainer.textContent = counter;
   msgContainer.textContent = message;
@@ -42,6 +47,7 @@ const updateUI = (message = "") => {
   if (buttons.plus) buttons.plus.disabled = counter >= MAX_VALUE;
 };
 
+// Aggiorna il counter in base all'argomento
 const updateCounter = (action) => {
   let message = "";
 
