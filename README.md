@@ -21,7 +21,7 @@ L'applicazione gestisce un contatore numerico con valori compresi tra un minimo 
 
 1. **Clona la repository** o scarica i file del progetto:
    ```bash
-   git clone https://github.com/tuo-username/counter-app.git
+   git clone https://michelecampanello.github.io/counter/
    ```
 
 2. **Assicurati che le icone siano presenti:**
